@@ -4,3 +4,59 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+
+:root.theme-light {
+  --background-color: #FFF;
+  --accent-color: #000;
+  --font-main-width-text: 400;
+  --font-main-width-title: 700;
+  --background-image: 
+    repeating-linear-gradient(to left,#d3d3d3 0 2px,transparent 2px 4px),
+    repeating-linear-gradient(to bottom, #d3d3d3 0 2px, transparent 2px 4px),
+    linear-gradient(to bottom, #e7e7e7 0.01%, #1a1a1a);
+  --width-box: clamp(23.438rem, 30.516vw + 16.285rem, 43.75rem); /* Резеновая ширина контента от 375 до 700 */
+  --sparks-fill: red;
+  --contour-fill: #000;
+  --main-body-fill: #000;
+  --core-fill: #000;
+  --global-fill: red;
+  --mix-button: #fff;
+}
+
+:root.theme-dark {
+  --background-color: #000;
+  --accent-color: #00CC14;
+  --font-main-width-text: 465;
+  --font-main-width-title: 785;
+  --background-image: 
+    repeating-linear-gradient(to left,#000 0 2px,transparent 2px 4px),
+    repeating-linear-gradient(to bottom, #000 0 2px, transparent 2px 4px),
+    linear-gradient(to bottom, #007f0c, #004306);
+  --width-box: clamp(23.438rem, 30.516vw + 16.285rem, 43.75rem); /* Резеновая ширина контента от 375 до 700 */
+  --sparks-fill: red;
+  --contour-fill: #00CC14;
+  --main-body-fill: #00CC14;
+  --core-fill: #00CC14;
+  --global-fill: red;
+  --mix-button: #00CC14;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #000;
+    --accent-color: #00CC14;
+    --font-main-width-text: 465;
+    --font-main-width-title: 785;
+    --background-image:   
+      repeating-linear-gradient(to left,#000 0 2px,transparent 2px 4px),
+      repeating-linear-gradient(to bottom, #000 0 2px, transparent 2px 4px),
+      linear-gradient(to bottom, #007f0c, #004306);
+    --width-box: clamp(23.438rem, 30.516vw + 16.285rem, 43.75rem); /* Резеновая ширина контента от 375 до 700 */
+    --sparks-fill: red;
+    --contour-fill: #00CC14;
+    --main-body-fill: #000;
+    --core-fill: #000;
+    --global-fill: red;
+    --mix-button: #00CC14;
+  }
+}
