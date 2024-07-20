@@ -54,8 +54,8 @@
     --width-box: clamp(23.438rem, 30.516vw + 16.285rem, 43.75rem); /* Резеновая ширина контента от 375 до 700 */
     --sparks-fill: red;
     --contour-fill: #00CC14;
-    --main-body-fill: #000;
-    --core-fill: #000;
+    --main-body-fill: #00CC14;
+    --core-fill: #00CC14;
     --global-fill: red;
     --mix-button: #00CC14;
   }

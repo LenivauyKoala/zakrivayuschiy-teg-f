@@ -33,7 +33,7 @@
   width: var(--width-box);
   border: 2px solid var(--accent-color);
   text-transform: uppercase;
-  font-family: var(--font-accent), sans-serif;
+  font-family: var(--font-accent), fantasy;
   background-color: var(--background-color);
   text-align: center;
   padding: 
@@ -49,6 +49,10 @@
 .header__logo {
   font-size: clamp(3.063rem, 2.71rem + 1.502vw, 4.063rem);
   margin-bottom: 20px;
+}
+
+.header__logo:focus {
+  outline: none;
 }
 
 .header__title {
@@ -125,7 +129,7 @@
 
 .main {
   width: var(--width-box);
-  margin: 0 auto 50px;
+  margin: 0 auto 103px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -145,12 +149,15 @@
 
 .card__box {
   position: relative;
+  height: 696px;
+  border-block-start: 2px solid var(--accent-color);
+  border-block-end: 2px solid var(--accent-color);
 }
 
 .card__box-label {
   z-index: 1;
   position: absolute;
-  font-family: var(--font-accent);
+  font-family: var(--font-accent), fantasy;
   font-size: 14px;
   color: var(--accent-color);
   text-transform: uppercase;
@@ -158,11 +165,21 @@
   right: 25px;
   mix-blend-mode: hard-light;
   opacity: 0.5;
-  text-shadow: 1px 1px 2px red;
+  text-shadow: 0 0 1px var(--background-color);
+}
+
+@supports (
+  (-webkit-text-stroke: 1px var(--background-color)) or
+    (text-stroke: 1px var(--background-color))
+) {
+  .card__box-label {
+    -webkit-text-stroke: 1px var(--background-color);
+  }
 }
 
 .card__box-image {
   width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -248,7 +265,7 @@
   border: 2px solid var(--accent-color);
   transition: 0.3s ease;
   background-color: var(--background-color);
-  font-family: var(--font-accent);
+  font-family: var(--font-accent), fantasy;
   font-size: 14px;
   line-height: 90%;
   position: relative;
@@ -292,13 +309,7 @@
   padding: 15px 21px 15px 19px;
 }
 
-.footer {
-  display: flex;
-  justify-content: center;
-  margin: 0 auto 105px;
-}
-
-.dialog {
+.dialog[open] {
   padding: 30px;
   background: var(--background-color);
   width: 353px;
@@ -308,7 +319,7 @@
 
 dialog::backdrop {
   background-color: rgb(0 0 0 / 0.3);
-  backdrop-filter: blur(7px);
+  backdrop-filter: blur(0.75px);
 } 
 
 .floppy {
@@ -325,7 +336,7 @@ dialog::backdrop {
 
 .dialog__title {
   max-width: 200px;
-  font-family: var(--font-accent);
+  font-family: var(--font-accent), fantasy;
   font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
